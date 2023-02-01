@@ -5,10 +5,6 @@ const TelegramBot = require("node-telegram-bot-api");
 
 const app = express();
 
-app.use(
-  express.static("zalo_verifierGyFcS8MnFIfqmUWXjCHVTs_cZM23cLewDJ8.html")
-);
-
 app.use(cors());
 app.use(express.json());
 
