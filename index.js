@@ -4,6 +4,11 @@ require("dotenv").config();
 const TelegramBot = require("node-telegram-bot-api");
 
 const app = express();
+
+app.use(
+  express.static("zalo_verifierGyFcS8MnFIfqmUWXjCHVTs_cZM23cLewDJ8.html")
+);
+
 app.use(cors());
 app.use(express.json());
 
@@ -28,6 +33,10 @@ bot.onText(/\/echo (.+)/, (msg, match) => {
 
   // send back the matched "whatever" to the chat
   bot.sendMessage(chatId, resp);
+});
+
+app.get("/", (req, res) => {
+  res.status(200).send("Hello");
 });
 
 app.get("/zalo", (req, res) => {
